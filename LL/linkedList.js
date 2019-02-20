@@ -56,76 +56,95 @@ find(value){
         current = current.next;
     }
 
-    throw new Error('Value could not be found.');
+    return null;
 }
 
 //method to insert node before value
 insertBefore(value, newValue){
+    const newNode = new Node(newValue);
+
     if(!this.head){
         throw new Error('The list is empty');
     }
 
     if(this.head.value === value){
-        newValue.next = this.head;
-        this.head = newValue;
+        newNode.next = this.head;
+        this.head = newNode;
+        return;
     }
 
     let current = this.head;
 
     while(current.next){
         if(current.next.value === value){
-            newValue.next = current.next;
-            current.next = newValue;
+            newNode.next = current.next;
+            current.next = newNode;
+            return;
         }
 
         current = current.next;
     }
 
-    throw new Error('Value not found');
+    return null;
 }
 
 //method to insert after value
 insertAfter(value, newValue){
+    const newNode = new Node(newValue);
+
     if(!this.head){
         throw new Error('The list is empty');
     }
 
     if(this.head.value === value){
-        newValue.next = this.head.next;
-        this.head.next = newValue;
+        newNode.next = this.head.next;
+        this.head.next = newNode;
+        return;
     }
 
     let current = this.head;
 
     while(current.next){
         if(current.next.value === value){
-            newValue.next = current.next.next;
-            current.next.next = newValue;
+            newNode.next = current.next.next;
+            current.next.next = newNode;
+            return;
         }
 
         current = current.next;
     }
 
-    throw new Error('Value not found');
+    return null;
+
 }
 
 //method to print current list
 printList(){
+    let displayArray = [];
+
     if(!this.head){
         throw new Error('No list exists');
     }
 
     if(this.head.next = null){
-        console.log(this.head.value);
+        displayArray.push(this.head.value);
+        return displayArray;
     }
 
     let current = this.head;
 
     while(current.next){
-        console.log(current.value);
+        displayArray.push(current.value);
         current = current.next;
     }
 
+    displayArray.forEach(function(element){
+        console.log(element);
+    })
+    
+    return displayArray;
 }
 //constructor end
 }
+
+module.exports = LinkedList;
