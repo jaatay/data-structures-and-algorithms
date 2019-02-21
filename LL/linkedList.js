@@ -145,6 +145,7 @@ class LinkedList{
     return null;
   }
 
+  //method to find list length
   findLength(){
     let lengthCounter = 0;
     if(!this.head){
