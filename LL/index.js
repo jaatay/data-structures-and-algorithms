@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 
 const Node = require('./node');
 const List = require('./linkedList');
@@ -26,5 +26,6 @@ console.log(list1);
 list1.insertBefore(3, 2);
 console.log(list1);
 
-let storedArray = list1.printList();
-console.log(storedArray);
+list1.printList();
+list1.findLength();
+
