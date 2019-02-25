@@ -19,7 +19,7 @@ This is because, while the insertion itself is an O(1), the complexity is ultima
 
 
 ## Solution
-<!-- Embedded whiteboard image -->
+[LL Insertions](../assets/LLInsert.jpg)
 
 #### Acknowledgments
 vladimirsan - starter code
