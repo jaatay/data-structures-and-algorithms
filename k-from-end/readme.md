@@ -14,7 +14,7 @@ Space = O(1)
 
 
 ## Solution
-![LL Insertions](../assets/LLKFromEnd.jpg)
+![Whiteboard image](../assets/LLKFromEnd.jpg)
 
 #### Acknowledgments
 vladimirsan - starter code
