@@ -172,33 +172,32 @@ class LinkedList{
     }
 
     return lengthCounter;
-  };
+  }
 
   findKfromEnd(k){
     let counter = 0;
-    let current = head;
-    let runner = head;
+    let current = this.head;
+    let runner = this.head;
 
     if(k < 0){
-        throw new Error('Invalid K value');
+      return('Not found: value K must be equal or greater than zero');
     }
 
     while(runner.next){
 
-        if(counter > k){
-            current = current.next;
-        }
+      if(counter >= k){
+        current = current.next;
+      }
+      counter++;
+      runner = runner.next;
+    }
 
-        if(k > counter){
-            throw new Error('value K out of range');
-        }
-        
-        counter++;
-        runner = runner.next;
+    if(k > counter){
+      return('Not found: value K out of range');
     }
 
     return current.value;
-  };
+  }
 //constructor end
 }
 
