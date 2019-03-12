@@ -174,6 +174,10 @@ class LinkedList{
     return lengthCounter;
   }
 
+  /**
+   * CHALLENGE METHOD
+   * @param {*} k 
+   */
   findKfromEnd(k){
     let counter = 0;
     let current = this.head;
