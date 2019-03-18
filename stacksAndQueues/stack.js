@@ -35,7 +35,7 @@ class Stack {
        let current = this.top;
        this.top = current.next;
 
-       return console.log(`Successfully popped ${current}, new top is ${this.top.value}`);
+       return `Successfully popped ${current}, new top is ${this.top.value}`;
     }
 
     /**
@@ -47,7 +47,7 @@ class Stack {
             return this.top.value;
         } 
         catch(err){
-            return console.log('Stack is empty.');
+            return 'Stack is empty.';
         }
     }
 
@@ -59,7 +59,7 @@ class Stack {
             current = current.next;
         }
 
-        return console.log(`${current.value} ==> NULL`);
+        return `${current.value} ==> NULL`;
 
        
     }

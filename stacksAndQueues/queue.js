@@ -25,7 +25,7 @@ class Queue {
         this.front = newNode;
        
 
-        console.log(`Successfully enqueued ${current.value}.`);
+        return `Successfully enqueued ${current.value}.`;
     }
 
     /**
@@ -38,12 +38,10 @@ class Queue {
        while(current.next.next){
            current = current.next;
        }
-       
-       console.log(`Current front of Queue: ${current.next.value}`);
 
        current.next = null;
 
-       console.log(`New front of Queue: ${current.value}`);
+       return `New front of Queue: ${current.value}`;
 
     }
 
@@ -60,11 +58,11 @@ class Queue {
                 current = current.next;
             }
 
-            console.log(`Peeked ${current.next.value}`);
+            return `Peeked ${current.next.value}`;
 
         } 
         catch(err){
-            return console.log('Stack is empty.');
+            return 'Stack is empty.';
         }
     }
 
@@ -80,7 +78,7 @@ class Queue {
             current = current.next;
         }
 
-        console.log(`${current.value} ==> NULL`);
+        return `${current.value} ==> NULL`;
 
        
     }
