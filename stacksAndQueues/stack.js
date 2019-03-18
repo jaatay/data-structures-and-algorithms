@@ -24,7 +24,7 @@ class Stack {
         this.top = newNode;
         let current = this.top;
 
-        console.log(`Successfully pushed ${current.value} to top of stack.`);
+        return console.log(`Successfully pushed ${current.value} to top of stack.`);
     }
 
     /**
@@ -35,7 +35,7 @@ class Stack {
        let current = this.top;
        this.top = current.next;
 
-       console.log(`Successfully popped ${current}, new top is ${this.top.value}`);
+       return console.log(`Successfully popped ${current}, new top is ${this.top.value}`);
     }
 
     /**
@@ -59,9 +59,11 @@ class Stack {
             current = current.next;
         }
 
-        console.log(`${current.value} ==> NULL`);
+        return console.log(`${current.value} ==> NULL`);
 
        
     }
 //end stack class
 }
+
+module.exports = Stack;
