@@ -7,8 +7,8 @@ const Queue = require('../queue');
 
 describe('#stack', () => {
   const testStack = new Stack();
-  testList.push(1);
-  testList.push(2);
+  testStack.push(1);
+  testStack.push(2);
   
   
   test('can push onto stack', () =>{
@@ -23,9 +23,40 @@ describe('#stack', () => {
       expect(testStack.peek()).toBe(2);
   });
 
+
   test('empty stack', () => {
-      expect(testStack.pop().pop().peek()).toBe('Stack is empty.');
+    //empty test stack
+    testStack.pop();
+    testStack.pop();
+      expect(testStack.peek()).toBe('Stack is empty.');
   });
 
 });
 
+describe('#Queue', () => {
+    const testQ = new Queue();
+    testQ.enqueue(1);
+    testQ.enqueue(2);
+    
+    
+    test('can enqueue', () =>{
+      expect(testQ.enqueue(3)).toBe(`Successfully enqueued 3.`);
+    });
+  
+    test('can dequeue', () => {
+        expect(testQ.dequeue()).toBe(`New front of Queue: 2`);
+    });
+  
+    test('can peek', () => {
+        expect(testQ.peek()).toBe(`Peeked 2`);
+    });
+  
+  
+    test('empty queue', () => {
+      //empty test queue
+      testQ.dequeue();
+      testQ.dequeue();
+        expect(testQ.peek()).toBe('Stack is empty.');
+    });
+  
+  });

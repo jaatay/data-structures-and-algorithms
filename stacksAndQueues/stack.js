@@ -24,7 +24,7 @@ class Stack {
         this.top = newNode;
         let current = this.top;
 
-        return console.log(`Successfully pushed ${current.value} to top of stack.`);
+        return `Successfully pushed ${current.value} to top of stack.`;
     }
 
     /**
@@ -32,10 +32,20 @@ class Stack {
      */
     pop(){
 
+        if(!this.top){
+            return 'Stack is empty.';
+        }
+
        let current = this.top;
+
+       if(current.next === null){
+           this.top = null;
+           return 'Stack is empty.';
+       }
+
        this.top = current.next;
 
-       return `Successfully popped ${current}, new top is ${this.top.value}`;
+       return `Successfully popped ${current.value}, new top is ${this.top.value}`;
     }
 
     /**
@@ -43,6 +53,10 @@ class Stack {
      */
     peek(){
 
+        if(!this.top){
+            return 'Stack is empty.';
+
+        }
         try{
             return this.top.value;
         } 
