@@ -16,24 +16,39 @@ class Queue {
      * Enters a new node into the queue
      * @param {*} value 
      */
-    Enqueue(value){
+    enqueue(value){
 
         const newNode = new Node(value);
         
+        if(!this.front){
+            this.front = newNode;
+            let current = this.front;
+            return `Successfully enqueued ${current.value}.`;
+        }
+
         let current = this.front;
         newNode.next = current;
         this.front = newNode;
        
 
-        return `Successfully enqueued ${current.value}.`;
+        return `Successfully enqueued ${this.front.value}.`;
     }
 
     /**
      * removes a node from the end of the queue
      */
-    Dequeue(){
+    dequeue(){
+
+        if(!this.front){
+            return 'Queue is empty.'
+        }
 
        let current = this.front;
+
+       if(current.next === null){
+           this.front = null;
+           return 'Queue is empty.'
+       }
 
        while(current.next.next){
            current = current.next;
